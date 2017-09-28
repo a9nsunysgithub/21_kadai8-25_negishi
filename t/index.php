@@ -137,13 +137,15 @@
       }else{
         //Selectデータの数だけ自動でループしてくれる
         while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-          $view = $result["indate"];
-          $view = $result["id"];
-          $view = $result["naiyou"];
+          $view .= $result["id"]." ";
+          $view .= $result["indate"]."   ";
+          $view .= $result["naiyou"].'</p>';
+          
         }
 
       }
       ?>
+	<?php echo $view; ?>
   	</ul>
     <div class="box00">
       <a href="">>過去のプログラミングができる学習宿泊ホテルからのお知らせ一覧を見る</a>
